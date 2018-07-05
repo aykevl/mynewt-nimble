@@ -499,7 +499,7 @@ hal_timer_init(int timer_num, void *cfg)
 
     /* Disable IRQ, set priority and set vector in table */
     NVIC_DisableIRQ(irq_num);
-    NVIC_SetPriority(irq_num, (1 << __NVIC_PRIO_BITS) - 1);
+    NVIC_SetPriority(irq_num, 1); //(1 << __NVIC_PRIO_BITS) - 1);
 #if MYNEWT
     NVIC_SetVector(irq_num, (uint32_t)irq_isr);
 #else
